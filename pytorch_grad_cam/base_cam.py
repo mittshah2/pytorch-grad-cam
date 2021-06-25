@@ -22,7 +22,7 @@ class BaseCAM:
             target_layer, reshape_transform)
 
     def forward(self, input_img):
-        return self.model(input_img)
+        return self.model([{'image':input_img}])
 
     def get_cam_weights(self,
                         input_tensor,
